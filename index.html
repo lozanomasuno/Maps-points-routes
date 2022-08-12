@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Medellin</title>
+
+    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+</head>
+<body>
+  
+  <div id="map"></div>   
+  
+  <div id="buttons">
+    <h2 id="responsible"></h2>
+    <label id="randomHour"></label>
+    <div class="select-menu active">
+      <div class="select-btn" onclick="resetMap()">
+        <span class="sBtn-text">Seleccionar Ronda</span>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+      <ul class="options">
+        <li class="option" onclick="loadRoundFirst()" value="ronda1">
+          <span class="option-text">ronda 1</span>
+        </li>
+        <li class="option" onclick="loadRoundSecond()" value="ronda2">
+          <span class="option-text" >ronda 2</span>
+        </li>
+        <li class="option" onclick="loadRoundThird()" value="ronda3">
+          <span class="option-text">ronda 3</span>
+        </li>     
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnnPs2u1cc3SOAPe0gxtD04rXbSJW64j4&callback=initMap&v=weekly" defer ></script>  
+  <script src="main.js"></script>
+
+</body>
+</html>
