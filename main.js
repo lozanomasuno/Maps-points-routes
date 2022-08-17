@@ -9,6 +9,8 @@ let marker;
 let points = [];
 let resultTime = document.getElementById("randomHour");
 let mapcenter = { lat: 6.22722, lng: -75.56456 };
+let url = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
+
 
 initMap = () => {
   map = new google.maps.Map(document.querySelector("#map"), {
@@ -206,7 +208,6 @@ let places = [
   {
     lat: 6.234264010890535,
     lng: -75.55758893408884,
-    Adress: "",
     assigned: "Luis Amaral",
     ronda: 1,
   },
@@ -363,12 +364,17 @@ let loadResponsible = (arrResponsible) => {
   responsible.innerHTML = "Bienvenido " + " " + arrResponsible[0].assigned;
 };
 
-let pointMarker = (points) => {
+
+
+let pointMarker = (points) => {  
   for (let i = 0; i < points.length; i++) {
     marker = new google.maps.Marker({
       position: points[i].position,
       animation: google.maps.Animation.DROP,
       newCenter: points[0].center,
+      icon: {
+        url: url
+      },
       label: `${i + 1}`,
       map: map,
     });
