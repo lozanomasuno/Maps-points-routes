@@ -16,15 +16,23 @@
   <div id="map"></div>   
   
   <div id="buttons">
+      
+    <div id="min-bar" class="graybar"></div>
+
     <h2 id="responsible"></h2>
     <label id="randomHour"></label>
+    <label id="RoundNumer"></label>
+
+    
     <div class="select-menu active">
-      <div class="select-btn" onclick="resetMap()">
+
+      <div class="select-btn" onclick="resetMap()"> 
         <span class="sBtn-text">Seleccionar Ronda</span>
         <i class="fa fa-angle-down" aria-hidden="true"></i>
       </div>
+
       <ul class="options">
-        <li class="option" onclick="loadRoundFirst()" value="ronda1">
+        <li class="option" onclick="loadRoundFirst(event)" value="ronda1">
           <span class="option-text">ronda 1</span>
         </li>
         <li class="option" onclick="loadRoundSecond()" value="ronda2">
@@ -34,7 +42,10 @@
           <span class="option-text">ronda 3</span>
         </li>     
       </ul>
+
     </div>
+
+   
   </div>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnnPs2u1cc3SOAPe0gxtD04rXbSJW64j4&callback=initMap&v=weekly" defer ></script>  
