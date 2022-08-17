@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
 }
 
 html,
@@ -12,6 +11,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
+  color: #25344d;  
 }
 
 #map {
@@ -26,7 +26,7 @@ body {
   width: 26%;
   height: 28%;
   padding: 2%;
-  border: 1px solid #cbcbcb;
+  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
 }
 
 .select-menu {
@@ -105,6 +105,17 @@ body {
   -webkit-animation-fill-mode: both;
 }
 
+.select-menu.active .option > .option{
+  transform: translateY(20px);
+}
+
+#responsible{
+  color: #48738c;
+}
+#randomHour{
+  color: #78bccb;
+}
+
 @keyframes fadeInUp {
   from {
     transform: translate3d(0, 30px, 0);
@@ -124,4 +135,74 @@ body {
     transform: translate3d(0, 20px, 0);
     opacity: 0;
   }
+}
+
+.graybar{
+  visibility: none;
+}
+
+@media (max-width: 768px) {
+
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+
+  #buttons {
+    top: 52%;
+    left: 0%;
+    width: 100%;
+    height: 50%;
+    padding: 0 5%;
+    text-align: center;
+    background: #fff;
+    border-radius: 40px 40px 0 0;
+    box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+  }
+
+  .select-menu {
+    max-width: 450px;
+    margin: 5px auto;
+    text-transform: capitalize;
+  }
+  .select-menu .options {
+    position: absolute;
+    width: 90%;
+    overflow-y: auto;
+    max-width: 438px;
+    padding: unset;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.35s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.35s;
+    -webkit-animation-fill-mode: both;
+  }
+
+  .select-menu .select-btn {
+    display: flex;
+    width: 100%;
+    background: #fff;
+    padding: 11px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+  }
+  .graybar{
+    display: block;
+    background-color: #48738c;
+    width: 30%;
+    height: 2%;
+    border-radius: 25px;
+    margin: 15px auto;
+  }
+ 
 }
